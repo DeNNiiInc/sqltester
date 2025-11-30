@@ -4,7 +4,7 @@ A comprehensive web-based tool for testing connections to MySQL, MariaDB, Postgr
 
 ![SQL Database Tester](https://img.shields.io/badge/Database-MySQL%20%7C%20MariaDB%20%7C%20PostgreSQL%20%7C%20SQLite-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-v14%2B-green)
-![License]((https://img.shields.io/badge/License-GNU%20GPL-blue)
+![License](https://img.shields.io/badge/License-GNU%20GPL-blue)
 
 ## ✨ Features
 
@@ -170,6 +170,7 @@ Contributions, issues, and feature requests are welcome!
 ---
 
 **⚠️ Important**: Always use secure connections in production environments and never store sensitive credentials in your code.
+
 
 
 
