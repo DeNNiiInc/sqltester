@@ -28,7 +28,7 @@ A comprehensive web-based tool for testing connections to MySQL, MariaDB, Postgr
 
 1. **Navigate to the project directory**:
    ```bash
-   cd "c:\Users\DM\OneDrive - BCT\BCT-YT - Documents\Project-Files\HTML\SQL-Tester"
+   cd ".\SQL-Tester"
    ```
 
 2. **Install dependencies**:
@@ -170,3 +170,4 @@ Contributions, issues, and feature requests are welcome!
 ---
 
 **⚠️ Important**: Always use secure connections in production environments and never store sensitive credentials in your code.
+
