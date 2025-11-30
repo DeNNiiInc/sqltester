@@ -8,7 +8,7 @@ A comprehensive web-based tool for testing connections to MySQL, MariaDB, Postgr
 
 ## ✨ Features
 
-- 🔌 **Multi-Database Support**: Connect to MySQL, MariaDB, PostgreSQL, and SQLite
+- 🔌 **Multi-Database Support**: Connect to MySQL, MariaDB, PostgreSQL, and SQLite etc
 - 🧪 **Connection Testing**: Verify database connections with detailed feedback
 - 💾 **Database Management**: List, create, and delete databases
 - 👥 **User Management**: List, create, and delete database users
@@ -184,3 +184,4 @@ Contributions, issues, and feature requests are welcome!
 ---
 
 **⚠️ Important**: Always use secure connections in production environments and never store sensitive credentials in your code.
+
