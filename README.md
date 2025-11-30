@@ -155,7 +155,7 @@ INSERT INTO test VALUES (1, 'Test User');
 
 ## 📄 License
 
-MIT License - feel free to use this tool for personal or commercial projects.
+GPL - feel free to use this tool for personal or commercial projects.
 
 ## 👨‍💻 Author
 
@@ -170,4 +170,5 @@ Contributions, issues, and feature requests are welcome!
 ---
 
 **⚠️ Important**: Always use secure connections in production environments and never store sensitive credentials in your code.
+
 
