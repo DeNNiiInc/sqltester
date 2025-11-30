@@ -4,7 +4,7 @@ A comprehensive web-based tool for testing connections to MySQL, MariaDB, Postgr
 
 ![SQL Database Tester](https://img.shields.io/badge/Database-MySQL%20%7C%20MariaDB%20%7C%20PostgreSQL%20%7C%20SQLite-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-v14%2B-green)
-![License](https://img.shields.io/badge/License-GNU%20GPL-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 ## ✨ Features
 
@@ -28,7 +28,7 @@ A comprehensive web-based tool for testing connections to MySQL, MariaDB, Postgr
 
 1. **Navigate to the project directory**:
    ```bash
-   cd ".\SQL-Tester"
+   cd "c:\Users\DM\OneDrive - BCT\BCT-YT - Documents\Project-Files\HTML\SQL-Tester"
    ```
 
 2. **Install dependencies**:
@@ -155,7 +155,7 @@ INSERT INTO test VALUES (1, 'Test User');
 
 ## 📄 License
 
-GPL - feel free to use this tool for personal or commercial projects.
+MIT License - feel free to use this tool for personal or commercial projects.
 
 ## 👨‍💻 Author
 
@@ -170,9 +170,3 @@ Contributions, issues, and feature requests are welcome!
 ---
 
 **⚠️ Important**: Always use secure connections in production environments and never store sensitive credentials in your code.
-
-
-
-
-
-
