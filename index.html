@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Database Tester | Beyond Cloud Technology</title>
+    <link rel="icon" type="image/png" href="FINAL/Logo.png">
+    <link rel="stylesheet" href="FINAL/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <img src="FINAL/Logo.png" alt="Beyond Cloud Technology" class="title-logo">
+                    Beyond Cloud Technology - SQL Database Tester
+                </h1>
+                <p class="subtitle">Test connections to MySQL, MariaDB, PostgreSQL & SQLite</p>
+                <a href="https://www.youtube.com/@beyondcloudtechnology" target="_blank" rel="noopener noreferrer"
+                    class="youtube-link">
+                    <svg class="youtube-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                    Watch on YouTube @beyondcloudtechnology
+                </a>
+            </div>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">Not Connected</span>
+            </div>
+        </header>
+
+        <main class="grid">
+            <!-- Connection Panel -->
+            <section class="panel connection-panel">
+                <h2>🔌 Database Connection</h2>
+                <form id="connectionForm">
+                    <div class="form-group">
+                        <label for="dbType">Database Type</label>
+                        <select id="dbType" required>
+                            <option value="mysql">MySQL</option>
+                            <option value="mariadb">MariaDB</option>
+                            <option value="postgresql">PostgreSQL</option>
+                            <option value="sqlite">SQLite</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row" id="networkFields">
+                        <div class="form-group">
+                            <label for="host">Host</label>
+                            <input type="text" id="host" placeholder="localhost" value="localhost">
+                        </div>
+                        <div class="form-group">
+                            <label for="port">Port</label>
+                            <input type="number" id="port" placeholder="3306" value="3306">
+                        </div>
+                    </div>
+
+                    <div class="form-row" id="credentialFields">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" placeholder="root">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="••••••••">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="database">Database (Optional)</label>
+                        <input type="text" id="database"
+                            placeholder="Leave empty to connect without selecting a database">
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-icon">🔗</span>
+                            Test Connection
+                        </button>
+                        <button type="button" class="btn btn-secondary" id="disconnectBtn" disabled>
+                            <span class="btn-icon">🔌</span>
+                            Disconnect
+                        </button>
+                    </div>
+                </form>
+
+                <div id="connectionInfo" class="info-box" style="display: none;"></div>
+            </section>
+
+            <!-- Query Executor -->
+            <section class="panel query-panel">
+                <h2>⚡ Query Executor</h2>
+                <div class="query-container">
+                    <textarea id="queryInput" placeholder="Enter your SQL query here...
+Example:
+SELECT * FROM users LIMIT 10;
+SHOW TABLES;
+DESCRIBE table_name;" disabled></textarea>
+                    <button class="btn btn-primary" id="executeBtn" disabled>
+                        <span class="btn-icon">▶️</span>
+                        Execute Query
+                    </button>
+                </div>
+                <div id="queryResults" class="results-container"></div>
+            </section>
+
+            <!-- Database Management -->
+            <section class="panel database-panel">
+                <h2>💾 Database Management</h2>
+
+                <div class="management-section">
+                    <h3>Existing Databases</h3>
+                    <button class="btn btn-secondary btn-sm" id="refreshDbBtn" disabled>
+                        <span class="btn-icon">🔄</span>
+                        Refresh List
+                    </button>
+                    <div id="databaseList" class="list-container">
+                        <p class="placeholder">Connect to a database to view databases</p>
+                    </div>
+                </div>
+
+                <div class="management-section">
+                    <h3>Create New Database</h3>
+                    <div class="form-inline">
+                        <input type="text" id="newDbName" placeholder="database_name" disabled>
+                        <button class="btn btn-success" id="createDbBtn" disabled>
+                            <span class="btn-icon">➕</span>
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Management -->
+            <section class="panel user-panel">
+                <h2>👥 User Management</h2>
+
+                <div class="management-section">
+                    <h3>Existing Users</h3>
+                    <button class="btn btn-secondary btn-sm" id="refreshUserBtn" disabled>
+                        <span class="btn-icon">🔄</span>
+                        Refresh List
+                    </button>
+                    <div id="userList" class="list-container">
+                        <p class="placeholder">Connect to a database to view users</p>
+                    </div>
+                </div>
+
+                <div class="management-section">
+                    <h3>Create New User</h3>
+                    <div class="form-group">
+                        <input type="text" id="newUsername" placeholder="username" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="newUserPassword" placeholder="password" disabled>
+                    </div>
+                    <div class="form-group" id="userHostGroup">
+                        <input type="text" id="newUserHost" placeholder="host (% for all)" value="%" disabled>
+                    </div>
+                    <button class="btn btn-success" id="createUserBtn" disabled>
+                        <span class="btn-icon">➕</span>
+                        Create User
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Beyond Cloud Technology. All rights reserved.</p>
+            <p class="footer-note">Always use secure connections in production environments</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="FINAL/app.js"></script>
+</body>
+
+</html>
