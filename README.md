@@ -4,7 +4,7 @@ A comprehensive web-based tool for testing connections to MySQL, MariaDB, Postgr
 
 ![SQL Database Tester](https://img.shields.io/badge/Database-MySQL%20%7C%20MariaDB%20%7C%20PostgreSQL%20%7C%20SQLite-blue)
 ![Node.js](https://img.shields.io/badge/Node.js-v14%2B-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![License](https://img.shields.io/badge/License-GPL--3.0-blue)
 
 ## ✨ Features
 
@@ -155,7 +155,21 @@ INSERT INTO test VALUES (1, 'Test User');
 
 ## 📄 License
 
-MIT License - feel free to use this tool for personal or commercial projects.
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+
+This means you are free to:
+- ✅ Use this software for any purpose
+- ✅ Study and modify the source code
+- ✅ Distribute copies of the software
+- ✅ Distribute modified versions
+
+**However, you must:**
+- 📋 Include the original copyright notice
+- 📋 Include the full text of the GPL-3.0 license
+- 📋 Make your source code available when distributing
+- 📋 License your modifications under GPL-3.0 as well
+
+For the full license text, see the [LICENSE](LICENSE) file or visit [GNU GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## 👨‍💻 Author
 
